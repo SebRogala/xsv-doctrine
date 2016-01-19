@@ -1,0 +1,19 @@
+<?php
+
+define('SRC_DIR', __DIR__ . '/../../src/');
+
+return [
+    'doctrine-entity-path' => [
+        //'ProperNamespace' => SRC_DIR . 'Directory/Containing/Entities'
+    ],
+    'doctrine-is-dev-mode' => false,
+    'doctrine-proxy-dir' => __DIR__ . '/../../data/cache/EntityProxy',
+    'dependencies' => [
+        'aliases' => [
+            'entity-manager' => 'entity-manager.default'
+        ],
+        'factories' => [
+            'entity-manager.default' => Xsv\Doctrine\Service\EntityManagerFactory::class,
+        ]
+    ]
+];

@@ -11,7 +11,9 @@
     }
   ],
   "require": {
-    "zendframework/zend-servicemanager": "^2.5"
+    "zendframework/zend-servicemanager": "^2.5",
+    "ocramius/proxy-manager": "^1.0",
+    "doctrine/orm": "^2.5"
   },
   "require-dev": {
     "composer/composer": ">=1.0.0-alpha10",

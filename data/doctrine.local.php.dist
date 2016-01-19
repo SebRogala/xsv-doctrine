@@ -1,0 +1,11 @@
+<?php
+
+return [
+    'doctrine-connection' => [
+        'driver'   => 'pdo_mysql',
+        'user'     => 'db_username',
+        'password' => 'db_password',
+        'dbname'   => 'db_name',
+    ],
+    'doctrine-is-dev-mode' => true,
+];

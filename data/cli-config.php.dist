@@ -1,0 +1,10 @@
+<?php
+use Doctrine\ORM\Tools\Console\ConsoleRunner;
+use Xsv\Doctrine\Service\EntityManagerFactory;
+
+$container = require 'container.php';
+
+$entityManagerFactory = new EntityManagerFactory();
+$entityManager = $entityManagerFactory($container);
+
+return ConsoleRunner::createHelperSet($entityManager);
