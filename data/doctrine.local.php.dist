@@ -1,11 +1,17 @@
 <?php
 
+define('SRC_DIR', __DIR__ . '/../../src/');
+
 return [
+    'doctrine-entity-path' => [
+        //'ProperNamespace' => SRC_DIR . 'Directory/Containing/Entities'
+    ],
     'doctrine-connection' => [
         'driver'   => 'pdo_mysql',
         'user'     => 'db_username',
         'password' => 'db_password',
         'dbname'   => 'db_name',
     ],
-    'doctrine-is-dev-mode' => true,
+    //'doctrine-is-dev-mode' => true,
+    'doctrine-proxy-dir' => __DIR__ . '/../../data/cache/EntityProxy',
 ];
