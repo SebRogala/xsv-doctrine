@@ -19,7 +19,7 @@ class EntityManagerFactory
         $isDevMode = $config['doctrine-is-dev-mode'];
         $proxyDir = $config['doctrine-proxy-dir'];
 
-        $doctrineConfig = Setup::createAnnotationMetadataConfiguration($paths, $isDevMode, $proxyDir);
+        $doctrineConfig = Setup::createAnnotationMetadataConfiguration($paths, $isDevMode, $proxyDir, null, false);
         $entityManager = EntityManager::create($conn, $doctrineConfig);
         return $entityManager;
     }
