@@ -5,6 +5,8 @@
 
 namespace Xsv\Doctrine;
 
+use Doctrine\ORM\EntityManager;
+use Xsv\Doctrine\Service\DoctrineServiceFactory;
 use Xsv\Doctrine\Service\EntityManagerFactory;
 
 class Config
@@ -14,8 +16,12 @@ class Config
         return [
             'doctrine-is-dev-mode' => false,
             'dependencies' => [
+                'aliases' => [
+                    'entity-manager' => EntityManager::class,
+                ],
                 'factories' => [
-                    'entity-manager' => EntityManagerFactory::class,
+                    EntityManager::class => EntityManagerFactory::class,
+                    DoctrineServiceFactory::class => DoctrineServiceFactory::class,
                 ]
             ]
         ];
