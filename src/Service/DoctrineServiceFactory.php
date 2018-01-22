@@ -19,6 +19,6 @@ class DoctrineServiceFactory implements FactoryInterface
     ) {
         $em = $container->get('entity-manager');
 
-        return $requestedName($em);
+        return new $requestedName($em);
     }
 }
