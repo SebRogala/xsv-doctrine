@@ -8,6 +8,7 @@
 namespace Xsv\Doctrine\Service;
 
 use Interop\Container\ContainerInterface;
+use Xsv\Doctrine\Hydrator\Hydrator;
 use Zend\ServiceManager\Factory\FactoryInterface;
 
 class DoctrineServiceFactory implements FactoryInterface
@@ -18,7 +19,8 @@ class DoctrineServiceFactory implements FactoryInterface
         array $options = null
     ) {
         $em = $container->get('entity-manager');
+        $hydrator = new Hydrator($em);
 
-        return new $requestedName($em);
+        return new $requestedName($em, $hydrator);
     }
 }
