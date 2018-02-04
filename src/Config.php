@@ -22,7 +22,10 @@ class Config
                 'factories' => [
                     EntityManager::class => EntityManagerFactory::class,
                     DoctrineServiceFactory::class => DoctrineServiceFactory::class,
-                ]
+                ],
+                'abstract_factories' => [
+                    Service\AbstractDoctrineServiceFactory::class,
+                ],
             ]
         ];
     }
