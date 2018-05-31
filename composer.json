@@ -1,39 +1,39 @@
 {
-  "name": "sebrogala/xsv-doctrine",
-  "description": "Middleware for Doctrine 2 integration with Zend Expressive",
-  "type": "library",
-  "homepage": "https://github.com/SebRogala/xsv-doctrine",
-  "license": "proprietary",
-  "authors": [
-    {
-      "name": "Sebastian Rogala",
-      "homepage": "http://sebrogala.com/"
+    "name": "sebrogala/xsv-doctrine",
+    "description": "Middleware for Doctrine 2 integration with Zend Expressive",
+    "type": "library",
+    "homepage": "https://github.com/SebRogala/xsv-doctrine",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Sebastian Rogala",
+            "homepage": "http://sebrogala.com/"
+        }
+    ],
+    "require": {
+        "php": "^7.1",
+        "ocramius/proxy-manager": "^2.2",
+        "doctrine/orm": "^2.6",
+        "zendframework/zend-stdlib": "^3.1",
+        "zendframework/zend-hydrator": "^2.4"
+    },
+    "require-dev": {
+        "composer/composer": ">=1.0.0-alpha10",
+        "phpunit/phpunit": "~5.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Xsv\\Doctrine\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "XsvTest\\Doctrine\\": "test/"
+        }
+    },
+    "scripts": {
+        "test": [
+            "php vendor/phpunit/phpunit/phpunit"
+        ]
     }
-  ],
-  "require": {
-    "ocramius/proxy-manager": "^1.0",
-    "doctrine/orm": "^2.5",
-    "zendframework/zend-stdlib": "^3.1",
-    "zendframework/zend-hydrator": "^2.3"
-  },
-  "require-dev": {
-    "composer/composer": ">=1.0.0-alpha10",
-    "phpunit/phpunit": "~5.0"
-  },
-  "autoload": {
-    "psr-4": {
-      "Xsv\\Doctrine\\": "src/"
-    }
-  },
-  "autoload-dev": {
-    "psr-4": {
-      "XsvTest\\Doctrine\\": "test/"
-    }
-  },
-  "scripts": {
-    "test": [
-      "php vendor/squizlabs/php_codesniffer/scripts/phpcs",
-      "php vendor/phpunit/phpunit/phpunit"
-    ]
-  }
 }
