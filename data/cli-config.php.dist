@@ -5,6 +5,6 @@ use Xsv\Doctrine\Service\EntityManagerFactory;
 $container = require 'container.php';
 
 $entityManagerFactory = new EntityManagerFactory();
-$entityManager = $entityManagerFactory($container);
+$entityManager = $entityManagerFactory($container, \Doctrine\ORM\EntityManager::class); //default one
 
 return ConsoleRunner::createHelperSet($entityManager);

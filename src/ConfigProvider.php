@@ -6,25 +6,24 @@
 namespace Xsv\Doctrine;
 
 use Doctrine\ORM\EntityManager;
-use Xsv\Doctrine\Service\DoctrineServiceFactory;
-use Xsv\Doctrine\Service\EntityManagerFactory;
+use Xsv\Doctrine\Factory\EntityManagerFactory;
 
-class Config
+class ConfigProvider
 {
     public function __invoke()
     {
         return [
-            'doctrine-is-dev-mode' => false,
+            'doctrine' => [
+                \Doctrine\ORM\EntityManager::class => [
+                    'is-dev-mode' => false,
+                ],
+            ],
             'dependencies' => [
                 'aliases' => [
                     'entity-manager' => EntityManager::class,
                 ],
                 'factories' => [
                     EntityManager::class => EntityManagerFactory::class,
-                    DoctrineServiceFactory::class => DoctrineServiceFactory::class,
-                ],
-                'abstract_factories' => [
-                    Service\AbstractDoctrineServiceFactory::class,
                 ],
             ]
         ];

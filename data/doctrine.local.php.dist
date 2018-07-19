@@ -1,17 +1,23 @@
 <?php
 
-define('SRC_DIR', __DIR__ . '/../../src/');
-
 return [
-    'doctrine-entity-path' => [
-        //'ProperNamespace' => SRC_DIR . 'Directory/Containing/Entities'
+    'doctrine' => [
+        \Doctrine\ORM\EntityManager::class => [
+            /*'entity-path' => [    // preferably move to individual module
+                'ProperNamespace' => 'Directory/Containing/Entities'
+            ],*/
+            'connection' => [
+                'driver'   => 'pdo_mysql',
+                'user'     => 'db_username',
+                'password' => 'db_password',
+                'dbname'   => 'db_name',
+            ],
+            //'is-dev-mode' => true,
+            'proxy-dir' => __DIR__ . '/../../data/cache/DoctrineProxy',
+            'entity-driver' => 'xml', //xml, annotation
+            /*'types' => [
+                Ramsey\Uuid\Doctrine\UuidType::NAME => Ramsey\Uuid\Doctrine\UuidType::class,
+            ],*/
+        ],
     ],
-    'doctrine-connection' => [
-        'driver'   => 'pdo_mysql',
-        'user'     => 'db_username',
-        'password' => 'db_password',
-        'dbname'   => 'db_name',
-    ],
-    //'doctrine-is-dev-mode' => true,
-    'doctrine-proxy-dir' => __DIR__ . '/../../data/cache/EntityProxy',
 ];
