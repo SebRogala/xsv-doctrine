@@ -1,6 +1,6 @@
 <?php
 use Doctrine\ORM\Tools\Console\ConsoleRunner;
-use Xsv\Doctrine\Service\EntityManagerFactory;
+use Xsv\Doctrine\Factory\EntityManagerFactory;
 
 $container = require 'container.php';
 
